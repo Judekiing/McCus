@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Blog</h1>
+
+
+
+<ul>
+    {% for post in all_posts_list %}
+        <li> {{ post }}</li>
+    {% endfor %}
+
+</ul>
+<ul>
+    {% for product in all_products_list %}
+        <li> {{ product }}</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock content %}
