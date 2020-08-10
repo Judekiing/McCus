@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Post
 from pages.models import Product
 from django.http import HttpResponse
-
 
 class BlogPageView(ListView):
 
@@ -20,5 +19,9 @@ def home_page_view(request):
         'all_posts_list': Post.objects.all()
     })
 
+class BlogDetailView(DetailView):
 
+    model = Post 
+
+    template_name = 'single.html'
 # Create your views here.
