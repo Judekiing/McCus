@@ -23,5 +23,5 @@ class BlogDetailView(DetailView):
 
     model = Post 
 
-    template_name = 'single.html'
+    template_name = 'post_detail.html'
 # Create your views here.
