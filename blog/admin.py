@@ -4,7 +4,7 @@ from .models import Post
 
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'date')
+    list_display = ('title', 'author', 'updated_at', 'created_at',)
 
 admin.site.register(Post, BlogAdmin)
 

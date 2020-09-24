@@ -1,0 +1,41 @@
+{% extends 'base2.html' %}
+
+{% block title %}Blog Detail{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    .space-top-4 { padding-top: 12.5rem;}
+</style>
+        <!--================Home Banner Area =================-->
+        <section class="banner space-top-4">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h2>Post Details</h2>
+                        <div class="page_link">
+                            <a href="{% url 'home'%}">Home </a> |
+                            <a href="{% url 'signup' %}">Post Detail </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+    
+
+    <!-- Article details Area  -->
+
+    <div>
+        <h2>{{ object.title }}</h2>
+            <p>by {{ object.author }} | {{ object.created_at }}</p>
+            <p>{{object.body}} </p>
+    </div>
+
+    <p><a href="{% url 'blog_edit' post.pk %}">Edit</a> |
+        <a href="{% url 'blog_del' post.pk %}">Delete</a>
+    </p>
+    <p>Back to <a href="{% url 'blog' %} "></a></p>
+{% endblock content %}

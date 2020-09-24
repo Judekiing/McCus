@@ -1,0 +1,41 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+
+
+<style>
+    .space-top-4 { padding-top: 12.5rem;}
+</style>
+        <!--================Home Banner Area =================-->
+        <section class="banner space-top-4">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h2>New Blog Post</h2>
+                        <div class="page_link">
+                            <a href="{% url 'home'%}">Home </a> |
+                            <a href="{% url 'blog_new' %}">New Post </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                    
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p}}
+                    <button class="btn btn-success ml-2" type="submit">Save</button>
+                </form>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+
+        <!--================Blog Edit  Area =================-->
+       
+
+
+    
+        <!--================Blog Edit  Area =================-->
+{% endblock content %}

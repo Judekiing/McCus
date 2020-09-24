@@ -1,23 +1,59 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
+{% block title %}Blog{% endblock title %}
+
+{% load static %}
 
 {% block content %}
+<style>
+    .space-top-4 { padding-top: 12.5rem;}
+</style>
 
-<h1>Blog</h1>
+<div class="container single_product_container space-top-4">
+    <div class="row">
+        <div class="col">
+
+            <!-- Breadcrumbs -->
+
+            <section class="banner" >
+                <div class="banner_inner d-flex align-items-center">
+                    <div class="container">
+                        <div class="banner_content text-center">
+                            <h2>Blog</h2>
+                            <div class="page_link">
+                                <a href="{% url 'home'%}">Home </a> |
+                                <a href="{% url 'blog' %}">Blog </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+          
+            <!--================Blog Box Area =================-->
+        {% for post in all_post_list %}
+            <div class="card">
+                <div class="card-header">
+                    <span class="font-weight-bold">{{post.title}}</span> &middot;
+                    <span class="text-muted">by {{ post.author }} | 
+                        {{ post.created_at }}</span>
+                </div>
+                <div class="user_pic"></div>
+                <div class="card-body">
+                        {{post.body}}
+                </div>   
+                <div class="card-footer text-center text-muted">
+                    <a href="{% url 'blog_edit' post.pk %}">Edit</a> |
+                    <a href="{% url 'blog_del' post.pk %}">Delete</a>
+                </div>
+            </div>
+            <br/>
+
+        {% endfor %}
+
+</div>
 
 
-
-<ul>
-    {% for post in all_posts_list %}
-        <li> {{ post }}</li>
-    {% endfor %}
-
-</ul>
-<ul>
-    {% for product in all_products_list %}
-        <li> {{ product }}</li>
-    {% endfor %}
-
-</ul>
 
 {% endblock content %}

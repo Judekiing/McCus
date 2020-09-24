@@ -31,8 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     'blog.apps.BlogConfig',
     'pages.apps.PagesConfig',
+    
+    # 3rd party
+    # 'crispy_forms',
+
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -62,6 +68,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -102,6 +109,20 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.1/howto/static-files/
+
+STATIC_URL = '/static/'
+STATTICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# Media Files 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# User authentication
+AUTH_USER_MODEL = 'users.CustomUser'
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -115,9 +136,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Login Redirection
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
-STATIC_URL = '/static/'
-STATTICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# CRISPY Bootstrap4
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# Email client
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+

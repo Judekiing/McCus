@@ -1,0 +1,43 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}
+<style>
+    .space-top-4 { padding-top: 12.5rem;}
+</style>
+        <!--================Home Banner Area =================-->
+        <section class="banner space-top-4">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h2>Confirm Delete</h2>
+                        <div class="page_link">
+                            <a href="{% url 'home'%}">Home </a> |
+                            <a href="#">Sign Up </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+
+        <!--================Blog Edit  Area =================-->
+        <div class="super_container">
+            <div class="container single_product_container">
+
+                <div>
+                    <h1>Delete</h1>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <p> Are you sure you want to delete "{{ post.title }}"</p>
+                        <button class="btn btn-danger ml-2" type="submit">Confirm</button>
+                    </form>
+                </div>
+
+        </div>
+
+
+    
+        <!--================Blog Edit  Area =================-->
+{% endblock content %}
