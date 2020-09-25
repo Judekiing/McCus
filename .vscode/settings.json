@@ -1,3 +1,6 @@
 {
-    "python.pythonPath": "McCus\\Scripts\\python3.7.exe"
+    "python.pythonPath": "McCus\\Scripts\\python3.7.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true
 }
