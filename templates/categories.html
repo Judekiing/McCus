@@ -1,3 +1,5 @@
+{% extends 'base2.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -170,6 +172,7 @@
 		</div>
 	</div>
 
+	{% block content %}
 	<div class="container product_section_container">
 		<div class="row">
 			<div class="col product_section clearfix">
@@ -542,6 +545,7 @@
 			</div>
 		</div>
 	</div>
+	{% endblock content %}
 
 	<!-- Benefit -->
 

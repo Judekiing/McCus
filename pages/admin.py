@@ -1,9 +1,17 @@
 from django.contrib import admin
-from .models import Product
+from .models import Product, Review
 
+
+
+class ReviewInline(admin.TabularInline):
+    model = Review
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'stock', 'category')
+    inlines = [
+        ReviewInline
+    ]
+    list_display = ('product_name', 'price', 'stock', 'category')
 
 
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Review)

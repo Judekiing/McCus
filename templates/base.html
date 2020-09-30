@@ -6,7 +6,7 @@
 	<html lang="en">
 
 	<head>
-		<title>McCUS</title>
+		<title>{% block title %}McCUS{% endblock title %}</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="Colo Shop Template">
@@ -71,8 +71,14 @@
 									<i class="fa fa-angle-down"></i>
 								</a>
 								<ul class="account_selection">
-									<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-									<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+									{% if user.is_authenticated %}
+
+										<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Hi {{user.username}}!</a></li>
+										<li><a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</a></li>
+									{% else %}																				
+										<li><a href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+										<li><a href="{% url 'signup' %"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+									{% endif %}
 								</ul>
 							</li>
 						</ul>
@@ -93,7 +99,7 @@
 					</div>
 					<nav class="navbar">
 						<ul class="navbar_menu">
-							<li><a href="home.html">home</a></li>
+							<li><a href="{% url 'home' %}">home</a></li>
 							<li><a href="#">shop</a></li>
 							<li><a href="#">promotion</a></li>
 							<li><a href="#">pages</a></li>
@@ -158,14 +164,19 @@
 					<i class="fa fa-angle-down"></i>
 				</a>
 				<ul class="menu_selection">
-					<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-					<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+					{% if user.is_authenticated %}
+
+						<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Hi {{user.username}}!</a></li>
+						<li><a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</a></li>
+					{% else %}																				
+						<li><a href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="{% url 'signup' %"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+					{% endif %}
 				</ul>
 			</li>
-			<li class="menu_item"><a href="#">home</a></li>
+			<li class="menu_item"><a href="{% url 'home' %}">home</a></li>
 			<li class="menu_item"><a href="#">shop</a></li>
 			<li class="menu_item"><a href="#">promotion</a></li>
-			<li class="menu_item"><a href="#">pages</a></li>
 			<li class="menu_item"><a href="{% url 'blog' %}">blog</a></li>
 			<li class="menu_item"><a href="contact.html">contact</a></li>
 		</ul>
@@ -356,7 +367,7 @@
 	<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
 	<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
 	<script src="{% static 'plugins/easing/easing.js' %}"></script>
-	<script src="{% static 'plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+	<script src="{% static 'plugins/jquery-ui-1.12.1.custom/jquery-ui.js' %}"></script>
 	<script src="{% static 'js/custom.js' %}"></script>
 </body>
 
