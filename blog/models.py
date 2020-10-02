@@ -11,6 +11,14 @@ class Post(models.Model):
         on_delete=models.CASCADE,
     )
     body = models.TextField()
+    # body2 = models.TextField()
+    # body3 = models.TextField()
+    # quote = models.TextField()
+    # body4 = models.TextField()
+    # body5 = models.TextField()
+    # feature_image = 
+    # post_image
+    # post_image2
     created_at = models.DateTimeField(auto_now_add=True)
      # updated_at = models.DateTimeField()
 
