@@ -1,8 +1,9 @@
-{% extends 'base2.html' %}
+{% extends 'base3.html' %}
+{% load static %}
 
 {% block title %}Blog | {{ block.super }}{% endblock title %}
 
-{% load static %}
+
 
 {% block content %}
 
@@ -54,7 +55,7 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="categories_post">
-            <img src="img/blog/cat-post/cat-post-3.jpg" alt="post">
+            <img src="{% static 'listashop/img/blog/cat-post/cat-post-3.jpg' %}" alt="post">
             <div class="categories_details">
               <div class="categories_text">
                 <a href="blog-details.html">
@@ -68,7 +69,7 @@
         </div>
         <div class="col-lg-4">
           <div class="categories_post">
-            <img src="img/blog/cat-post/cat-post-2.jpg" alt="post">
+            <img src="{% static 'listashop/img/blog/cat-post/cat-post-2.jpg' %}" alt="post">
             <div class="categories_details">
               <div class="categories_text">
                 <a href="blog-details.html">
@@ -82,7 +83,7 @@
         </div>
         <div class="col-lg-4">
           <div class="categories_post">
-            <img src="img/blog/cat-post/cat-post-1.jpg" alt="post">
+            <img src="{% static 'listashop/img/blog/cat-post/cat-post-1.jpg' %}" alt="post">
             <div class="categories_details">
               <div class="categories_text">
                 <a href="blog-details.html">
@@ -101,7 +102,7 @@
 
   <!--================Blog Area =================-->
   <section class="blog_area">
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="row">
         <div class="col-lg-8">
           <div class="blog_left_sidebar">
@@ -126,7 +127,7 @@
               </div>
               <div class="col-md-9">
                 <div class="blog_post">
-                  <img src="img/blog/main-blog/m-blog-1.jpg" alt="">
+                  <img src="{% static 'listashop/img/blog/main-blog/m-blog-1.jpg' %}" alt="">
                   <div class="blog_details">
                     <a href="{% url 'blog_detail' post.pk %}">
                       <h2>{{post.title}}</h2>
@@ -140,9 +141,13 @@
                         {{ comment }}
                       </p>
                       {% endfor %}
-                      <a href="{% url 'blog_detail' post.pk %}" class="white_bg_btn">View More</a>
+                    </div>
+                    <div> &nbsp;</div>
+                    <div>
+                    <a href="{% url 'blog_detail' post.pk %}" class="white_bg_btn">View More</a>
                     </div>
                   </div>
+                </div>
               </div>
             </article>
             {% endfor %} 
@@ -193,7 +198,7 @@
                 <a href="#"><i class="fa fa-behance"></i></a>
               </div>
               <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to
-                spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                spend money on boot camp when you can get. Boot camps have its supporters andits detractors.</p>
               <div class="br"></div>
             </aside>
             <aside class="single_sidebar_widget popular_post_widget">
