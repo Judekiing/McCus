@@ -1,2 +1,2 @@
 # McCus
-E-commerce project. Client: Samuel Marcus 
+E-commerce project. 
