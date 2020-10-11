@@ -161,4 +161,6 @@ LOGOUT_REDIRECT_URL = 'home'
 # Email client
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
