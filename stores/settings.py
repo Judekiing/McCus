@@ -28,8 +28,8 @@ DEBUG = False
 
 ADMINS = [('Jude', 'judekiingokorie@gmail.com')]
 
-ALLOWED_HOSTS = ["*"]
-# ".herokuapp.com"
+ALLOWED_HOSTS = [".herokuapp.com"]
+
 
 # Application definition
 
