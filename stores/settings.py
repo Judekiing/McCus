@@ -28,9 +28,10 @@ DEBUG = False
 
 ADMINS = [('Jude', 'judekiingokorie@gmail.com')]
 
-ALLOWED_HOSTS = [".herokuapp.com"]
+ALLOWED_HOSTS = [".herokuapp.com", "127.0.0.1:8000"]
+# "localhost"
 
-
+APPEND_SLASH = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,7 +41,6 @@ INSTALLED_APPS = [
     
     # 3rd party
     # 'crispy_forms',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -163,3 +163,26 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Configure Django App for Heroku.
 # import django_heroku
 # django_heroku.settings(locals())
+
+# LOG_PATH= 'logging.config.dictConfig'
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'error_file': {
+#             'level': 'ERROR',
+#             'filename': os.path.join(LOG_PATH, 'error.log'),
+#             'class':'logging.handlers.RotatingFileHandler',
+#             'maxBytes': 1 * 1024 * 1024,
+#             'backupCount': 2
+#         }
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['error_file'],
+#             'level': 'ERROR',
+#             'propagate': True
+#         }
+#     }
+# }           
