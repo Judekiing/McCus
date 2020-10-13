@@ -24,12 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2$u)^(_8ohjdn-k)&i429xuj*nl&*vo%5k2irc#u0&#l#igjh0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ADMINS = [('Jude', 'judekiingokorie@gmail.com')]
 
-ALLOWED_HOSTS = [".herokuapp.com", "127.0.0.1:8000"]
-# "localhost"
+ALLOWED_HOSTS = [".herokuapp.com","localhost",]
+#  "127.0.0.1"
 
 APPEND_SLASH = True
 # Application definition
